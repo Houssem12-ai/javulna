@@ -24,7 +24,7 @@ pipeline { // Defines a pipeline
              -Dsonar.login=sqp_a9f5ea593d78c0575dfca05d7764969b4c9df53d"
       }
     }
-
+    
     stage ('Unit Test') { // Defines the 'Unit Test' stage
       steps { // Specifies the steps to be executed within this stage
         sh 'mvn test' // Runs the Maven command to execute the unit tests
