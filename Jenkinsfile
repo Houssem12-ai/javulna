@@ -16,14 +16,15 @@ pipeline { // Defines a pipeline
         sh 'gitleaks detect --source  . -f json --report-path gitleaks.json || true'  
       }   
     }
+    
     stage('SonarQube Analysis') {
       steps {
-        sh "mvn  verify sonar:sonar \
-             -Dsonar.projectKey=test \
-             -Dsonar.host.url=http://172.19.0.3:9002 \
-             -Dsonar.login=sqp_3933d3a1cce91acf08a78d1716cf5fee1eb50c65"
+        sh "mvn clean verify sonar:sonar \
+             -Dsonar.projectKey=lab02 \
+             -Dsonar.host.url=http://localhost:9001 \
+             -Dsonar.login=sqp_a9f5ea593d78c0575dfca05d7764969b4c9df53d
       }
-    }
+    }  
 
     stage ('Unit Test') { // Defines the 'Unit Test' stage
       steps { // Specifies the steps to be executed within this stage
