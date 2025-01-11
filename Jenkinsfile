@@ -20,7 +20,7 @@ pipeline { // Defines a pipeline
       steps {
         sh "mvn  verify sonar:sonar \
              -Dsonar.projectKey=lab02 \
-             -Dsonar.host.url=http://172.19.0.3:9000 \
+             -Dsonar.host.url=http://172.18.0.4:9000 \
              -Dsonar.login=sqp_a9f5ea593d78c0575dfca05d7764969b4c9df53d"
       }
     }
